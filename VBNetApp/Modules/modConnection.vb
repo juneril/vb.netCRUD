@@ -153,12 +153,14 @@ JumpHere:
 
         If prepareDBConnString() = MsgBoxResult.Retry Then GoTo JumpHere
 
-        Application.Run(New frmLogin())  ' Method use to execute run command on what form to display first on the Application
+        Application.Run(New frmUsers())
 
-        If isLogin Then
+        'Application.Run(New frmLogin())  ' Method use to execute run command on what form to display first on the Application
 
-            Application.Run(New frmMain())
-        End If
+        'If isLogin Then
+
+        '    Application.Run(New frmUsers())
+        'End If
     End Sub
 
 End Module

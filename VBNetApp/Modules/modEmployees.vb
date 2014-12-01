@@ -78,7 +78,7 @@ Module modEmployees
         On Error GoTo err
         Dim con As New MySqlConnection(DB_CONNECTION_STRING)
         con.Open()
-        Dim sSQL As String = " ame,md5(@e_password),'" & E.mug_id & "','" & E.is_deleted & "')"
+        Dim sSQL As String = "INSERT INTO employees VALUE (null,@e_fname,@e_lname,@e_mname,@e_username,md5(@e_password),'" & E.mug_id & "','" & E.is_deleted & "')"
         Dim com As New MySqlCommand(sSQL, con)
         com.Parameters.AddWithValue("@e_fname", E.e_fname)
         com.Parameters.AddWithValue("@e_lname", E.e_lname)

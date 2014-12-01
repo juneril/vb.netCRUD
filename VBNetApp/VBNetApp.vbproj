@@ -100,10 +100,10 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\employess\Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Forms\Users\frmUsers.Designer.vb">
+      <DependentUpon>frmUsers.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\employess\Form2.vb">
+    <Compile Include="Forms\Users\frmUsers.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form1.vb">
@@ -137,10 +137,17 @@
     <Compile Include="Forms\frmProperties.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Users\frmUsersAE.Designer.vb">
+      <DependentUpon>frmUsersAE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\frmUsersAE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\modConnection.vb" />
     <Compile Include="Modules\modEmployees.vb" />
     <Compile Include="Modules\modFunctions.vb" />
     <Compile Include="Modules\modINIParser.vb" />
+    <Compile Include="Modules\modUsers.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -158,8 +165,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\employess\Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Users\frmUsers.resx">
+      <DependentUpon>frmUsers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmConnector.resx">
       <DependentUpon>frmConnector.vb</DependentUpon>
@@ -172,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProperties.resx">
       <DependentUpon>frmProperties.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\frmUsersAE.resx">
+      <DependentUpon>frmUsersAE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

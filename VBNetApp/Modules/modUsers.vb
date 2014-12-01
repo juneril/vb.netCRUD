@@ -15,7 +15,11 @@ Module modUsers
         Dim u_password As String
         Dim is_deleted As Short
     End Structure
+    Public Function viewusers(ByVal U As users, ByVal listview As ListView) As Boolean
 
+
+
+    End Function
     Public Function AddUsers(ByVal U As users) As Boolean
 
         On Error GoTo err

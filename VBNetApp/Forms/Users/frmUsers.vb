@@ -1,4 +1,7 @@
-﻿Public Class frmUsers
+﻿
+Imports CrystalDecisions.CrystalReports.Engine
+
+Public Class frmUsers
 
     Private Sub ToolStripButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton1.Click
 
@@ -31,5 +34,10 @@
             MsgBox("User Succesfully Deleted")
 
         End If
+    End Sub
+
+    Private Sub ToolStripButton5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton5.Click
+        Dim frm As New frmPrintPreview
+        frm.ShowPrintUser()
     End Sub
 End Class

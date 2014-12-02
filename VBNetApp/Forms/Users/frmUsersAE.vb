@@ -19,6 +19,8 @@ Public Class frmUsersAE
 
             If AddUsers(u) Then
                 MsgBox("REcord succesfully save")
+                Me.Close()
+
             End If
 
 
@@ -34,6 +36,7 @@ Public Class frmUsersAE
 
             If UpdateUsers(u) Then
                 MsgBox("REcord Succesfully Updated")
+                Me.Close()
             End If
 
 

@@ -110,6 +110,12 @@
     <Compile Include="Forms\frmPrintPreview.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Users\frmUserPhoto.Designer.vb">
+      <DependentUpon>frmUserPhoto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\frmUserPhoto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Users\frmUsers.Designer.vb">
       <DependentUpon>frmUsers.vb</DependentUpon>
     </Compile>
@@ -177,6 +183,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\frmPrintPreview.resx">
       <DependentUpon>frmPrintPreview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\frmUserPhoto.resx">
+      <DependentUpon>frmUserPhoto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\frmUsers.resx">
       <DependentUpon>frmUsers.vb</DependentUpon>

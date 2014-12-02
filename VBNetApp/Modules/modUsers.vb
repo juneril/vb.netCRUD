@@ -60,6 +60,7 @@ err:
         UpdateUsers = False
         DisplayErrorMsg("modUsers", "UpdateUsers", Err.Number, Err.Description)
     End Function
+
     Public Function Delete_Users(ByVal u_id As String) As Boolean
         If ExecuteQry("DELETE FROM users WHERE u_id='" & u_id & "'") Then
             Delete_Users = True
@@ -81,7 +82,7 @@ err:
         Exit Function
 err:
         DeleteUser = False
-        DisplayErrorMsg("modEmployees", "DeleteEmployee", Err.Number, Err.Description)
+        DisplayErrorMsg("modUsers", "DeleteUser", Err.Number, Err.Description)
     End Function
     Public Function CheckUserNameExisting(ByVal fname As String, ByVal lname As String, ByVal mname As String, _
                                    ByVal u_id As String) As Boolean

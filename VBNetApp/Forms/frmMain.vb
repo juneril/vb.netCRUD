@@ -85,4 +85,9 @@ Public Class frmMain
 
     Private m_ChildFormNumber As Integer
 
+    Private Sub UsersToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UsersToolStripMenuItem.Click
+        Dim frmuser = New frmUsers
+        frmuser.Show()
+
+    End Sub
 End Class

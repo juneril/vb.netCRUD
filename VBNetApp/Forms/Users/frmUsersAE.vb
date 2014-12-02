@@ -9,16 +9,31 @@ Public Class frmUsersAE
 
             Dim u As New users
 
-            u.u_fname = Me.TextBox1.Text
-            u.u_lname = Me.TextBox2.Text
-            u.u_mname = Me.TextBox3.Text
-            u.u_username = Me.TextBox4.Text
-            u.u_password = Me.TextBox5.Text
+            u.u_fname = Me.fname.Text
+            u.u_lname = Me.lname.Text
+            u.u_mname = Me.mname.Text
+            u.u_username = Me.username.Text
+            u.u_password = Me.password.Text
 
 
 
             If AddUsers(u) Then
                 MsgBox("REcord succesfully save")
+            End If
+
+
+        End If
+        If (Label6.Text = "Update User Account") Then
+            Dim u As New users
+            u.u_id = Convert.ToInt32(Me.U_ID.Text)
+            u.u_fname = Me.fname.Text
+            u.u_lname = Me.lname.Text
+            u.u_mname = Me.mname.Text
+            u.u_username = Me.username.Text
+            u.u_password = Me.password.Text
+
+            If UpdateUsers(u) Then
+                MsgBox("REcord Succesfully Updated")
             End If
 
 

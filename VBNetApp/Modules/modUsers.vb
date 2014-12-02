@@ -15,9 +15,7 @@ Module modUsers
         Dim u_password As String
         Dim is_deleted As Short
     End Structure
-    Public Function viewusers(ByVal U As users, ByVal listview As ListView) As Boolean
-
-
+    Public Function viewusers(ByVal listview As ListView) As Boolean
 
     End Function
     Public Function AddUsers(ByVal U As users) As Boolean
@@ -46,13 +44,13 @@ err:
         On Error GoTo err
         Dim con As New MySqlConnection(DB_CONNECTION_STRING)
         con.Open()
-        Dim sSQL As String = "UPDATE users SET u_fname=@u_fname,u_lname=@u_lname,u_mname=@u_mname,u_username=@u_username,u_password=md5(@u_password) WHERE e_id='" & U.u_id & "'"
+        Dim sSQL As String = "UPDATE users SET u_fname=@u_fname,u_lname=@u_lname,u_mname=@u_mname,u_username=@u_username,u_password=md5(@u_password) WHERE u_id='" & U.u_id & "'"
         Dim com As New MySqlCommand(sSQL, con)
-        com.Parameters.AddWithValue("@e_fname", U.u_fname)
-        com.Parameters.AddWithValue("@e_lname", U.u_lname)
-        com.Parameters.AddWithValue("@e_mname", U.u_mname)
-        com.Parameters.AddWithValue("@e_username", U.u_username)
-        com.Parameters.AddWithValue("@e_password", U.u_password)
+        com.Parameters.AddWithValue("@u_fname", U.u_fname)
+        com.Parameters.AddWithValue("@u_lname", U.u_lname)
+        com.Parameters.AddWithValue("@u_mname", U.u_mname)
+        com.Parameters.AddWithValue("@u_username", U.u_username)
+        com.Parameters.AddWithValue("@u_password", U.u_password)
         com.ExecuteNonQuery()
         com.Parameters.Clear()
         con.Close()

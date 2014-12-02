@@ -459,6 +459,8 @@ Partial Class frmMain
         '
         'UsersToolStripMenuItem
         '
+        Me.UsersToolStripMenuItem.Checked = True
+        Me.UsersToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.UsersToolStripMenuItem.Name = "UsersToolStripMenuItem"
         Me.UsersToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UsersToolStripMenuItem.Text = "&Users"

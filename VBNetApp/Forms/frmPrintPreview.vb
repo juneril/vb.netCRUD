@@ -28,4 +28,23 @@ Public Class frmPrintPreview
 
         Me.Show()
     End Sub
+    Public Sub ShowPrintrpt2()
+        Dim con As New MySqlConnection(DB_CONNECTION_STRING)
+        con.Open()
+        Dim com As New MySqlCommand("SELECT u_fname,u_lname,u_mname,u_username,u_password FROM desk_app.users;", con)
+        Dim dA As New MySqlDataAdapter()
+        Dim dS As New DataSet()
+        dA.SelectCommand = com
+        dA.Fill(dS)
+
+        Dim rpt As New ReportDocument()
+        rpt.Load(Application.StartupPath & "\\Reports\\rpt2.rpt")
+        rpt.SetDataSource(dS)
+
+        CRViewer.ReportSource = rpt
+        CRViewer.RefreshReport()
+        con.Close()
+
+        Me.Show()
+    End Sub
 End Class

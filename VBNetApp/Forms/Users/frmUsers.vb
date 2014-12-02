@@ -38,6 +38,6 @@ Public Class frmUsers
 
     Private Sub ToolStripButton5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton5.Click
         Dim frm As New frmPrintPreview
-        frm.ShowPrintUser()
+        frm.ShowPrintrpt2()
     End Sub
 End Class

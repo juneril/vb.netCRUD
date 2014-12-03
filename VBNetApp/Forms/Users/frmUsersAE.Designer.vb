@@ -187,6 +187,7 @@ Partial Class frmUsersAE
         '
         'pic_display
         '
+        Me.pic_display.BackgroundImage = Global.VBNetApp.My.Resources.Resources._133
         Me.pic_display.Location = New System.Drawing.Point(444, 134)
         Me.pic_display.Name = "pic_display"
         Me.pic_display.Size = New System.Drawing.Size(230, 203)

@@ -5,41 +5,59 @@ Option Explicit On
 Public Class frmUsersAE
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        If (Label6.Text = "Create User Account") Then
+        If CheckTextBox(Me.fname) Then
+            If (Label6.Text = "Create User Account") Then
 
-            Dim u As New users
+                Dim u As New users
 
-            u.u_fname = Me.fname.Text
-            u.u_lname = Me.lname.Text
-            u.u_mname = Me.mname.Text
-            u.u_username = Me.username.Text
-            u.u_password = Me.password.Text
+                u.u_fname = Me.fname.Text
+                u.u_lname = Me.lname.Text
+                u.u_mname = Me.mname.Text
+                u.u_username = Me.username.Text
+                u.u_password = Me.password.Text
 
+                If Not pic_display.Image Is Nothing Then
+                    If AddUsers(u) And SaveUsersPhoto(u, pic_display) Then
+                        MsgBox("REcord succesfully save")
+                        Me.Close()
 
+                    End If
+                Else
+                    If AddUsers(u) Then
+                        MsgBox("REcord succesfully save")
+                        Me.Close()
 
-            If AddUsers(u) And SaveUsersPhoto(u, pic_display) Then
-                MsgBox("REcord succesfully save")
-                Me.Close()
+                    End If
+                End If
+
+               
+
 
             End If
+            If (Label6.Text = "Update User Account") Then
+                Dim u As New users
+                u.u_id = Convert.ToInt32(Me.U_ID.Text)
+                u.u_fname = Me.fname.Text
+                u.u_lname = Me.lname.Text
+                u.u_mname = Me.mname.Text
+                u.u_username = Me.username.Text
+                u.u_password = Me.password.Text
+                If Not pic_display.Image Is Nothing Then
+                     If UpdateUsers(u) And UpdateUsersPhoto(u, pic_display) Then
+                        MsgBox("REcord Succesfully Updated")
+                        Me.Close()
+                    End If
+                Else
+                    If UpdateUsers(u) Then
+                        MsgBox("REcord succesfully save")
+                        Me.Close()
+
+                    End If
+                End If
+              
 
 
-        End If
-        If (Label6.Text = "Update User Account") Then
-            Dim u As New users
-            u.u_id = Convert.ToInt32(Me.U_ID.Text)
-            u.u_fname = Me.fname.Text
-            u.u_lname = Me.lname.Text
-            u.u_mname = Me.mname.Text
-            u.u_username = Me.username.Text
-            u.u_password = Me.password.Text
-
-            If UpdateUsers(u) And UpdateUsersPhoto(u, pic_display) Then
-                MsgBox("REcord Succesfully Updated")
-                Me.Close()
             End If
-
-
         End If
     End Sub
 

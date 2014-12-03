@@ -110,6 +110,24 @@
     <Compile Include="Forms\frmPrintPreview.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\PraticeDesign\frmPracticeGetPhoto.Designer.vb">
+      <DependentUpon>frmPracticeGetPhoto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PraticeDesign\frmPracticeGetPhoto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PraticeDesign\frmpractice_salesentry.Designer.vb">
+      <DependentUpon>frmpractice_salesentry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PraticeDesign\frmpractice_salesentry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PraticeDesign\PracticeDesign.Designer.vb">
+      <DependentUpon>PracticeDesign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PraticeDesign\PracticeDesign.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Users\frmUserPhoto.Designer.vb">
       <DependentUpon>frmUserPhoto.vb</DependentUpon>
     </Compile>
@@ -183,6 +201,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\frmPrintPreview.resx">
       <DependentUpon>frmPrintPreview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PraticeDesign\frmPracticeGetPhoto.resx">
+      <DependentUpon>frmPracticeGetPhoto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PraticeDesign\frmpractice_salesentry.resx">
+      <DependentUpon>frmpractice_salesentry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PraticeDesign\PracticeDesign.resx">
+      <DependentUpon>PracticeDesign.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\frmUserPhoto.resx">
       <DependentUpon>frmUserPhoto.vb</DependentUpon>

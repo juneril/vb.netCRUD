@@ -42,4 +42,20 @@ Public Class frmUsersAE
 
         End If
     End Sub
+
+    Private Sub frmUsersAE_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        If (Label6.Text = "Update User Account") Then
+
+            Dim u As New users
+            u.u_id = Convert.ToInt32(Me.U_ID.Text)
+            GetUsersPhoto(u, Me.U_Picture)
+
+
+
+
+
+        End If
+
+
+    End Sub
 End Class

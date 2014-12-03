@@ -246,7 +246,6 @@ err:
         On Error GoTo err
         Dim con As New MySqlConnection(DB_CONNECTION_STRING)
         con.Open()
-
         Dim adapter As New MySqlDataAdapter
         adapter.SelectCommand = New MySqlCommand(sSQL, con)
         Dim Data As New System.Data.DataTable
@@ -257,6 +256,7 @@ err:
         Dim lstr As New System.IO.MemoryStream(lb)
         Pic.Image = Image.FromStream(lstr)
         Pic.SizeMode = PictureBoxSizeMode.StretchImage
+
         lstr.Close()
         con.Close()
         Exit Sub

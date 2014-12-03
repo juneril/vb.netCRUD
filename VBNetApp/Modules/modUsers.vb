@@ -60,6 +60,30 @@ err:
         UpdateUsers = False
         DisplayErrorMsg("modUsers", "UpdateUsers", Err.Number, Err.Description)
     End Function
+    Public Function UpdateUsersPhoto(ByVal U As users, ByVal Photo As PictureBox) As Boolean
+        On Error GoTo err
+        Dim con As New MySqlConnection(DB_CONNECTION_STRING)
+        con.Open()
+        Dim sSQL As String = "UPDATE users SET Pic=@Pic WHERE u_id='" & U.u_id & "'"
+        SavePhoto(sSQL, Photo)
+        UpdateUsersPhoto = True
+        Exit Function
+err:
+        UpdateUsersPhoto = False
+        DisplayErrorMsg("modUsers", "UpdateUsersPhoto", Err.Number, Err.Description)
+    End Function
+    Public Sub GetUsersPhoto(ByVal U As users, ByRef Photo As PictureBox)
+        On Error GoTo err
+        Dim con As New MySqlConnection(DB_CONNECTION_STRING)
+        con.Open()
+        Dim sSQL As String = "SELECT u_id ,Pic FROM desk_app.users where u_id='" & U.u_id & "'"
+        GetPhoto(sSQL, Photo)
+
+        Exit Sub
+err:
+
+        DisplayErrorMsg("modUsers", "GetUsersPhoto", Err.Number, Err.Description)
+    End Sub
 
     Public Function Delete_Users(ByVal u_id As String) As Boolean
         If ExecuteQry("DELETE FROM users WHERE u_id='" & u_id & "'") Then

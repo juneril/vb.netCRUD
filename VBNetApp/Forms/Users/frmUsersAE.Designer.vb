@@ -38,7 +38,9 @@ Partial Class frmUsersAE
         Me.fname = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.U_ID = New System.Windows.Forms.Label()
+        Me.U_Picture = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -181,11 +183,20 @@ Partial Class frmUsersAE
         Me.U_ID.Size = New System.Drawing.Size(0, 13)
         Me.U_ID.TabIndex = 2
         '
+        'U_Picture
+        '
+        Me.U_Picture.Location = New System.Drawing.Point(444, 134)
+        Me.U_Picture.Name = "U_Picture"
+        Me.U_Picture.Size = New System.Drawing.Size(230, 203)
+        Me.U_Picture.TabIndex = 3
+        Me.U_Picture.TabStop = False
+        '
         'frmUsersAE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(476, 506)
+        Me.ClientSize = New System.Drawing.Size(737, 506)
+        Me.Controls.Add(Me.U_Picture)
         Me.Controls.Add(Me.U_ID)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.GroupBox1)
@@ -194,6 +205,7 @@ Partial Class frmUsersAE
         Me.Text = "frmUsersAE"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -213,4 +225,5 @@ Partial Class frmUsersAE
     Public WithEvents lname As System.Windows.Forms.TextBox
     Public WithEvents fname As System.Windows.Forms.TextBox
     Public WithEvents password As System.Windows.Forms.TextBox
+    Public WithEvents U_Picture As System.Windows.Forms.PictureBox
 End Class

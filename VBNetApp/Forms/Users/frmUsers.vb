@@ -21,6 +21,7 @@ Public Class frmUsers
         frmuserE.username.Text = lvUsers.SelectedItems(0).SubItems(3).Text
         frmuserE.password.Text = lvUsers.SelectedItems(0).SubItems(4).Text
         frmuserE.U_ID.Text = lvUsers.SelectedItems(0).SubItems(5).Text
+        GetPhoto("SELECT Pic FROM desk_app.users where u_id='" & lvUsers.SelectedItems(0).SubItems(5).Text & "';", frmuserE.pic_display)
         frmuserE.ShowDialog()
     End Sub
 
@@ -77,6 +78,8 @@ Public Class frmUsers
 
     Private Sub EditUserToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EditUserToolStripMenuItem.Click
         Dim frmuserE As New frmUsersAE
+
+
         frmuserE.Label6.Text = "Update User Account"
         frmuserE.fname.Text = lvUsers.SelectedItems(0).SubItems(0).Text
         frmuserE.lname.Text = lvUsers.SelectedItems(0).SubItems(1).Text
@@ -84,9 +87,7 @@ Public Class frmUsers
         frmuserE.username.Text = lvUsers.SelectedItems(0).SubItems(3).Text
         frmuserE.password.Text = lvUsers.SelectedItems(0).SubItems(4).Text
         frmuserE.U_ID.Text = lvUsers.SelectedItems(0).SubItems(5).Text
-
-
-
+        GetPhoto("SELECT Pic FROM desk_app.users where u_id='" & lvUsers.SelectedItems(0).SubItems(5).Text & "';", frmuserE.pic_display)
         frmuserE.ShowDialog()
     End Sub
 
@@ -100,5 +101,9 @@ Public Class frmUsers
         Dim frmPracticeGetPhotos As New frmPracticeGetPhoto
         GetPhoto("SELECT Pic FROM desk_app.users where u_id='" & lvUsers.SelectedItems(0).SubItems(5).Text & "';", frmPracticeGetPhotos.PictureBox1)
         frmPracticeGetPhotos.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        FillListView("SELECT u_fname,u_lname,u_mname,u_username,u_password,u_id FROM desk_app.users where u_fname like  '" & TextBox1.Text & "%' or u_lname like '" & TextBox1.Text & "%'", lvUsers)
     End Sub
 End Class

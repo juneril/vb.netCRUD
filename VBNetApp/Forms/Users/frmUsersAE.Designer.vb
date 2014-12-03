@@ -38,9 +38,11 @@ Partial Class frmUsersAE
         Me.fname = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.U_ID = New System.Windows.Forms.Label()
-        Me.U_Picture = New System.Windows.Forms.PictureBox()
+        Me.pic_display = New System.Windows.Forms.PictureBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.dlg_openfile = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pic_display, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -183,20 +185,34 @@ Partial Class frmUsersAE
         Me.U_ID.Size = New System.Drawing.Size(0, 13)
         Me.U_ID.TabIndex = 2
         '
-        'U_Picture
+        'pic_display
         '
-        Me.U_Picture.Location = New System.Drawing.Point(444, 134)
-        Me.U_Picture.Name = "U_Picture"
-        Me.U_Picture.Size = New System.Drawing.Size(230, 203)
-        Me.U_Picture.TabIndex = 3
-        Me.U_Picture.TabStop = False
+        Me.pic_display.Location = New System.Drawing.Point(444, 134)
+        Me.pic_display.Name = "pic_display"
+        Me.pic_display.Size = New System.Drawing.Size(230, 203)
+        Me.pic_display.TabIndex = 3
+        Me.pic_display.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(477, 353)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(158, 43)
+        Me.Button3.TabIndex = 4
+        Me.Button3.Text = "Browse"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'dlg_openfile
+        '
+        Me.dlg_openfile.FileName = "OpenFileDialog1"
         '
         'frmUsersAE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(737, 506)
-        Me.Controls.Add(Me.U_Picture)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.pic_display)
         Me.Controls.Add(Me.U_ID)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.GroupBox1)
@@ -205,7 +221,7 @@ Partial Class frmUsersAE
         Me.Text = "frmUsersAE"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.U_Picture, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic_display, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -225,5 +241,7 @@ Partial Class frmUsersAE
     Public WithEvents lname As System.Windows.Forms.TextBox
     Public WithEvents fname As System.Windows.Forms.TextBox
     Public WithEvents password As System.Windows.Forms.TextBox
-    Public WithEvents U_Picture As System.Windows.Forms.PictureBox
+    Public WithEvents pic_display As System.Windows.Forms.PictureBox
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents dlg_openfile As System.Windows.Forms.OpenFileDialog
 End Class

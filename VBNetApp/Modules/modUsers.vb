@@ -23,13 +23,14 @@ Module modUsers
         On Error GoTo err
         Dim con As New MySqlConnection(DB_CONNECTION_STRING)
         con.Open()
-        Dim sSQL As String = "INSERT INTO users VALUE (null,@u_fname,@u_lname,@u_mname,@u_username,md5(@u_password),'" & U.is_deleted & "')"
+        Dim sSQL As String = "INSERT INTO users VALUE (null,@u_fname,@u_lname,@u_mname,@u_username,md5(@u_password),'" & U.is_deleted & "',@Pic)"
         Dim com As New MySqlCommand(sSQL, con)
         com.Parameters.AddWithValue("@u_fname", U.u_fname)
         com.Parameters.AddWithValue("@u_lname", U.u_lname)
         com.Parameters.AddWithValue("@u_mname", U.u_mname)
         com.Parameters.AddWithValue("@u_username", U.u_username)
         com.Parameters.AddWithValue("@u_password", U.u_password)
+        com.Parameters.AddWithValue("@Pic", " ")
         com.ExecuteNonQuery()
         com.Parameters.Clear()
         con.Close()
@@ -70,6 +71,18 @@ err:
         Exit Function
 err:
         UpdateUsersPhoto = False
+        DisplayErrorMsg("modUsers", "UpdateUsersPhoto", Err.Number, Err.Description)
+    End Function
+    Public Function SaveUsersPhoto(ByVal U As users, ByVal Photo As PictureBox) As Boolean
+        On Error GoTo err
+        Dim con As New MySqlConnection(DB_CONNECTION_STRING)
+        con.Open()
+        Dim sSQL As String = "UPDATE users SET Pic=@Pic WHERE u_fname='" & U.u_fname & "' and u_lname='" & U.u_lname & "'and u_mname='" & U.u_mname & "'"
+        SavePhoto(sSQL, Photo)
+        SaveUsersPhoto = True
+        Exit Function
+err:
+        SaveUsersPhoto = False
         DisplayErrorMsg("modUsers", "UpdateUsersPhoto", Err.Number, Err.Description)
     End Function
     Public Sub GetUsersPhoto(ByVal U As users, ByRef Photo As PictureBox)
